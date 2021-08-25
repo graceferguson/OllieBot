@@ -1,2 +1,2 @@
 # OllieBot
-Custom AIML files for Ollie
+Ollie is a chatbot based on modified Cathy code
