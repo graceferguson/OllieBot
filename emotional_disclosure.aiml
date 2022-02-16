@@ -1,0 +1,47 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- emotional_disclosure.aiml -->
+
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- By Grace Ferguson, 08/12/2021 -->
+
+<!-- this AIML dictates what Ollie says in response to certain messages. -->
+<!-- the patterns must be written in all caps with no punctuation -->
+
+<!-- Ollie will choose one of these responses at random if a message contains the word "course"-->
+<category>
+        <pattern>* COURSE *</pattern>
+        <template><random>
+	<li>
+            This assignment took me all weekend. Did you have a hard time?
+	</li>
+
+	<li>
+            I found the lectures really hard to follow this week. Did you understand it?
+	</li>
+
+	<li>
+            This class is really hard, but I'm learning a lot. How are you doing?
+	</li>
+	
+	<li>
+            I went to office hours this week. I was worried it would be scary but it wasn't too bad. Have you been?
+	</li>
+
+        </random></template>
+</category>
+
+<!-- this is a follow up to the message about office hours. It is supposed to connect to the previous message but currently it doesn't work -->
+<category>
+	<pattern>NO</pattern>
+	<that>* OFFICE HOURS *</that>
+	<template>You should try it! Maybe it can help you.</template>
+</category>
+
+<!-- this message responds the key word "stressed" in any sentence and matches to the prevoius pattern -->
+<category>
+	<pattern>* STRESSED *</pattern>
+	<template><srai>COURSE</srai></template>
+</category>
+
+</aiml>

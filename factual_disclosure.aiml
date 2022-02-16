@@ -1,0 +1,71 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- factual_disclosure.aiml -->
+
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- By Grace Ferguson, 08/12/2021 -->
+
+<!-- this AIML dictates what Ollie says in response to certain messages. -->
+<!-- the patterns must be written in all caps with no punctuation -->
+
+<!-- Ollie will choose one of these responses at random -->
+<category>
+        <pattern>WHATS NEW WITH YOU</pattern>
+        <template><random>
+	<li>
+            I went for ice cream this weekend. Did you do something fun?
+	</li>
+
+	<li>
+            My friends and I went to the mall last weekend and I bought Spider-Man for PS4. What's your favourite video game?
+	</li>
+
+	<li>
+	    I took my dog to the park yesterday. Do you have a dog?
+	</li>
+
+	<li>
+            I'm planning a camping trip with my friends. Do you like camping?
+	</li>
+
+	<li>
+            I helped my mom run errands this morning. What's new with you?
+	</li>
+
+        </random></template>
+</category>
+
+<!-- these messages loop back to the previous message -->
+<category>
+	<pattern>WHATS UP</pattern>
+	<template><srai>WHATS NEW WITH YOU</srai></template>
+</category>
+
+<category>
+	<pattern>SUP</pattern>
+	<template><srai>WHATS NEW WITH YOU</srai></template>
+</category>
+
+<!-- this messages is partially different before looping back to the first pattern -->
+<category>
+	<pattern>HOW ARE YOU</pattern>
+	<template> I'm good. <srai>WHATS NEW WITH YOU</srai></template>
+</category>
+
+<!-- the asterisk means that Ollie will choose this if he doesn't recognize the message -->
+<category>
+	<pattern>*</pattern>
+	<template><random>
+	<li>
+	uh huh?
+	</li>
+
+	<li>
+	yeah?
+	</li>
+
+	</random></template>
+</category>
+
+
+</aiml>
